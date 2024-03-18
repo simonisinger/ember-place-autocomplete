@@ -22,20 +22,6 @@
   {{demo.snippet "service-example-with-power-select.hbs" label="primary"}}
 {{/docs-demo}}
 
-{{#docs-demo as |demo|}}
-  {{#demo.example name="service-example-with-power-select.hbs"}}
-    <PowerSelect
-      @options={{predictions}}
-      @onchange={{action "findPlaceDetails"}}
-      @selected={{selectedPlace}}
-      @search={{action "requestPredictions"}}
-      @allowClear={{true}}
-      as |prediction|
-    >
-      {{prediction.description}}
-    </PowerSelect>
-  {{/demo.example}}
-{{/docs-demo}}
 <p class="text-red-400 text-sm">
   Autocompletion could stop working on this example, because it uses a GOOGLE API KEY with limited number of request per day
 </p>
@@ -105,30 +91,6 @@
         }
       }
     });
-  {{/demo.example}}
-  {{#demo.example name="application-full.hbs"}}
-    {{!-- MORE CODE HERE --}}
-
-    <PowerSelect
-      @options={{predictions}}
-      @onchange={{action "findPlaceDetails"}}
-      @selected={{selectedPlace}}
-      @search={{action "requestPredictions"}}
-      @allowClear={{true}}
-      as |prediction|
-    >
-
-      {{prediction.description}}
-    </PowerSelect>
-
-    {{#if placeServiceResultJSON}}
-      <p>Google response</p>;
-      <pre class="json-result">
-        {{placeServiceResultJSON}}
-      </pre>
-    {{/if}}
-
-    {{!-- MORE CODE HERE --}}
   {{/demo.example}}
 {{/docs-demo}}
 
